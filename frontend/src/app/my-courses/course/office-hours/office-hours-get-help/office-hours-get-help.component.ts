@@ -120,7 +120,7 @@ export class OfficeHoursGetHelpComponent implements OnInit, OnDestroy {
 
   isFormValid(): boolean {
     let contentFieldsValid =
-      this.ticketForm.controls['type'].value === 0
+      this.ticketForm.controls['type'].value === 1
         ? this.ticketForm.controls['assignmentSection'].value !== '' &&
           this.ticketForm.controls['codeSection'].value !== '' &&
           this.ticketForm.controls['conceptsSection'].value !== '' &&
@@ -158,7 +158,7 @@ export class OfficeHoursGetHelpComponent implements OnInit, OnDestroy {
     /* Below is logic for checking form values and assigning the correct
       TicketType and ticket description accordingly
     */
-    if (this.ticketForm.controls['type'].value === 1) {
+    if (this.ticketForm.controls['type'].value === 0) {
       form_description =
         '**Conceptual Question**:  \n' +
         (this.ticketForm.controls['description'].value ?? '');
